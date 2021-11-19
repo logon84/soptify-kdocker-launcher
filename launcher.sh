@@ -5,7 +5,6 @@ if [ "$(id -u)" = "0" ]; then
 else
 
 APP="/usr/share/spotify"
-#--force-device-scale-factor=1.2
  
 if ps ax | grep -v grep | grep $APP | grep renderer > /dev/null
     then
