@@ -16,6 +16,6 @@ if ps ax | grep -v grep | grep $APP | grep renderer > /dev/null
             env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify &
             sleep 2
         done
-        kdocker -o -n Spotify -d 5 -i /usr/share/icons/hicolor/512x512/apps/spotify-client.png -q 
+        kdocker -o -n Spotify -d 7 -i /usr/share/icons/hicolor/512x512/apps/spotify-client.png -q 
     fi
 fi
