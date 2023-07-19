@@ -13,10 +13,11 @@ else
 	else
 		while ! ps ax | grep -v grep | grep $APP | grep renderer > /dev/null
 		do
-			killall spotify
+			killall -q spotify
 			env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify &
 			sleep 2
 		done
-		kdocker -o -n Spotify -d 7 -i /usr/share/icons/hicolor/512x512/apps/spotify-client.png -q 
+		spotify_window_pid=$(ps ax | grep -v grep | grep $APP | grep -v type | awk '{print $1}')
+		kdocker -o -x $spotify_window_pid -d 7 -i /usr/share/icons/hicolor/512x512/apps/spotify-client.png -q
 	fi
 fi
